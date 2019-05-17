@@ -24,7 +24,7 @@ public class EmployeeController {
     @RequestMapping("/employees")
     @CrossOrigin(origins = "http://localhost:4200")
     public Collection<Employee> listEmployees() throws SQLException {
-    	//Convert the email to he URL of the gravatar avatar
+    	//Convert the email to the URL of the gravatar avatar
     	List<Employee> list = employeeRepository.findAll();
     	list.stream().forEach(employee ->{
     		employee.setEmail(getGravatar(employee.getEmail()));
