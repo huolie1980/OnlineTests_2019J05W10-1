@@ -4,22 +4,22 @@ package com.acquisio.basic.java.question04;
 import java.util.ArrayList;
 import java.util.List;
 
-class Inventory {
+class Inventory<T> {
 
-    private List<Item> items = new ArrayList<>();
+    private List<T> items = new ArrayList<>();
 
-    public void add(Item item) {
-        items.add(item);
+    public void add(T t) {
+        items.add(t);
     }
 
-    public Item getFirst() {
+    public T getFirst() {
         if (items.size() > 0) {
             return items.get(0);
         }
         return null;
     }
 
-    public Item getLast() {
+    public T getLast() {
         int size = items.size();
         if (size > 0) {
             return items.get(size - 1);
@@ -28,16 +28,11 @@ class Inventory {
     }
 
 
-    public boolean remove(Item item) {
-        return items.remove(item);
+    public boolean remove(T t) {
+        return items.remove(t);
     }
 
-    public Item findFirst(String name) {
-        for (Item item : items) {
-            if (item.getName().equals(name)) {
-                return item;
-            }
-        }
-        return null;
+    public List<T> getList(){
+    	return items;
     }
 }

@@ -31,5 +31,19 @@ public class TreeNavigation {
         Node n4 = new Node("5", null, n3);
         Node n = new Node("2", n2, n4);
         // TODO: Implement code here
+        construct(n,1);
+    }
+    private void construct(Node current, int layer) {
+    	if(current != null) {
+    		for(int i = 0; i < layer; i++) {
+    			System.out.print("..");
+    		}
+    		
+    		System.out.println(current.name);
+    		layer++;
+    		for(int j = 0; j < current.children.length; j++) {
+    			construct(current.children[j],layer);
+    		}
+    	}
     }
 }

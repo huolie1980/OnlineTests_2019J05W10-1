@@ -21,6 +21,17 @@ public class FooBar {
 
     String fooBar(int value) {
         // TODO: Insert your code here
-        return null;
+    	String a = "Foo";
+    	String b = "Bar";
+    	if(value%3 == 0 && value%5 == 0) {
+    		return a + b;
+    	}else if(value%3 == 0) {
+    		return a;
+    	}else if(value%5 == 0) {
+    		return b;
+    	}else {
+    		return "" + value;
+    	}
+
     }
 }

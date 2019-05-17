@@ -2,6 +2,7 @@ package com.acquisio.basic.java.question06;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -24,10 +25,13 @@ public class Debugging {
 
         List<Integer> integers = new ArrayList<>(Arrays.asList(values));
 
-        for (Integer i : integers) {
-            if (i % 2 == 0) { // remove even numbers
-                integers.remove(i);
-            }
+
+        Iterator<Integer> it = integers.iterator();
+        while(it.hasNext()) {
+        	Integer x = it.next();
+        	if(x % 2 == 0) {
+        		it.remove();
+        	}
         }
 
         return integers.toArray(new Integer[integers.size()]);

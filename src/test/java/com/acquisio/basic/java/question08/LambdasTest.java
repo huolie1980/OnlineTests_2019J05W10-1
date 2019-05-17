@@ -21,7 +21,7 @@ public class LambdasTest {
         assertTrue(output.exists());
         String[] result = FileUtils.readFileToString(output).split("\n");
         assertEquals(3, result.length);
-        assertEquals(5, result[0].split(","));
+        assertEquals(5, result[0].split(",").length);
     }
 
 }
